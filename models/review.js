@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const reviewsSchema = new Schema({
-    
-    commentby:String,
+
     comment:String,
 
     rating: {
@@ -14,6 +13,11 @@ const reviewsSchema = new Schema({
     createdAt:{
         type: Date,
         default: Date.now()
+    },
+        
+    commentby:{
+        type:Schema.Types.ObjectId,
+        ref:"User",
     },
 
 });
