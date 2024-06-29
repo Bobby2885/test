@@ -1,4 +1,5 @@
 const Listing = require("../models/listing.js");
+const User = require("../models/user.js");
 
 module.exports.singupform = (req, res) => {
   res.render("../views/users/signup.ejs");
@@ -10,6 +11,7 @@ module.exports.singup = async (req, res) => {
     const newUser = new User({ email, username });
     const registeredUser = await User.register(newUser, password);
     console.log(registeredUser);
+
     req.login(registeredUser, (err) => {
       if (err) {
         return next(err);
