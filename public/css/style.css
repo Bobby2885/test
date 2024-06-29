@@ -242,3 +242,8 @@ input ,textarea {
     border-radius: 8px;
     padding: 0.2rem 1rem;
   }
+  /* map */
+  #map { 
+     height: 400px;
+     width: 80vh;
+  }
