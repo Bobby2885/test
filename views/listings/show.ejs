@@ -1,6 +1,7 @@
 <% layout("/layouts/boilerplate") %>
 <script>
   const maptoken = "<%= process.env.MAP_TOKEN %>";
+  const coordinates = <%-JSON.stringify (listing.geometry.coordinates)%>;
 </script>
 
 <body>
@@ -46,9 +47,9 @@
           </form>
         </div>
       </div>
+
       <% } %>
     </div>
-    <hr style="width: 100%; border: 3px solid black" />
 
     <div class="review">
       <% if(listing.reviews.length >0) {%>
@@ -79,6 +80,7 @@
         </div>
       </div>
       <% } %> <% if(currUser) { %>
+      <hr style="width: 100%; border: 3px solid black" />
       <div class="reviewform">
         <h4>Leave a Review</h4>
         <form

@@ -52,9 +52,9 @@ const sessionOptions = {
   },
 };
 
-app.get("/", (req, res) => {
-  res.send("home root");
-});
+// app.get("/", (req, res) => {
+//   res.send("home root");
+// });
 
 app.use(session(sessionOptions));
 app.use(flash());
